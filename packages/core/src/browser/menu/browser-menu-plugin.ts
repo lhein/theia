@@ -59,7 +59,7 @@ export class BrowserMainMenuFactory {
         for (const child of menu.children) {
             if (child instanceof ActionMenuNode) {
                 this.addPhosphorCommand(commands, child);
-            } else if (child instanceof CompositeMenuNode) {
+            } else if (child instanceof CompositeMenuNode && child.children.length > 0) {
                 this.addPhosphorCommands(commands, child);
             }
         }
